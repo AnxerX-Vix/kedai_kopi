@@ -1,13 +1,13 @@
-# Tugas Minggu 2 - Kopi Pojok
+https://anxerx-vix.github.io/kedai_kopi/
+# Tugas Minggu 3 - Kopinang Aku
 
-## 1. Apa yang muncul di address bar setelah form dikirim, dan mengapa data form tampil di sana?
+# Kopinang Aku
+## 1. Sebutkan satu bagian yang kamu susun dengan Flexbox dan satu bagian dengan Grid. Mengapa pilihan itu cocok untuk kedua bagian tersebut?
+Saya pakai Flexbox di bagian header (`.kepala` dan `nav ul`) untuk menaruh judul kedai di kiri dan link menu di kanan. Flexbox cocok di bagian ini karena isinya satu baris ke samping di layar laptop dan turun ke bawah di layar HP.
 
-Setelah tombol Kirim ditekan, di ujung URL pada address bar muncul tanda tanya (`?`) diikuti nama input dan isiannya, contohnya:
+Di halaman `menu.html` (`.grid-menu`), saya pakai Grid untuk daftar menu. Grid cocok karena kartu menunya butuh susunan baris dan kolom yang bisa berubah dari 1 kolom di HP jadi 3 kolom di laptop.
 
-`pesan.html?nama=Andi&whatsapp=08123456789&menu=americano&jumlah=2&cara_ambil=ambil&catatan=es+sedikit`
+## 2. Ceritakan satu aturan CSS yang awalnya tidak berlaku. Apa yang kamu lihat di panel Styles, dan bagaimana kamu memperbaikinya?
+Pada awalnya, saya menulis `width: 100%` pada semua elemen `input`. Akibatnya, tombol pilihan *radio button* ikut melebar dan labelnya bergeser ke baris baru.
 
-Data tersebut tampil di address bar karena tag `<form>` memakai `method="get"`. Sesuai materi HTTP Minggu 1, browser mengirim request `GET` dengan cara menempelkan data form langsung ke bagian query string URL.
-
-## 2. Pemilihan element semantic dan alasannya dibanding `<div>`
-
-Saya memakai element `<nav>` di dalam `<header>` untuk membungkus daftar link antarhalaman (Beranda, Menu, dan Pesan). Kalau memakai `<div>`, browser cuma membacanya sebagai kotak pembungkus biasa tanpa tahu fungsinya. Dengan `<nav>`, browser dan pembaca layar (screen reader) bisa mengenali bahwa bagian itu adalah navigasi utama situs.
+Setelah memeriksa elemen tersebut melalui panel *Styles* di Developer Tools, terlihat bahwa aturan `width: 100%` menimpa ukuran bawaan *radio button*. Saya memperbaikinya dengan membatasi selector hanya untuk `input[type="text"]`, `input[type="tel"]`, dan `input[type="number"]`.
